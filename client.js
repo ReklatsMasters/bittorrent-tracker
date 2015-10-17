@@ -11,7 +11,6 @@ var url = require('url')
 var common = require('./lib/common')
 var HTTPTracker = require('./lib/client/http-tracker') // empty object in browser
 var UDPTracker = require('./lib/client/udp-tracker') // empty object in browser
-var WebSocketTracker = require('./lib/client/websocket-tracker')
 
 inherits(Client, EventEmitter)
 
@@ -83,8 +82,6 @@ function Client (peerId, port, torrent, opts) {
         return new HTTPTracker(self, announceUrl)
       } else if (protocol === 'udp:' && typeof UDPTracker === 'function') {
         return new UDPTracker(self, announceUrl)
-      } else if ((protocol === 'ws:' || protocol === 'wss:') && webrtcSupport) {
-        return new WebSocketTracker(self, announceUrl)
       } else {
         process.nextTick(function () {
           var err = new Error('unsupported tracker protocol for ' + announceUrl)
