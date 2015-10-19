@@ -7,17 +7,8 @@
     "email": "feross@feross.org",
     "url": "http://feross.org/"
   },
-  "bin": {
-    "bittorrent-tracker": "./bin/cmd.js"
-  },
-  "browser": {
-    "./lib/common-node": false,
-    "./lib/client/http-tracker": false,
-    "./lib/client/udp-tracker": false,
-    "./server": false
-  },
   "bugs": {
-    "url": "https://github.com/feross/bittorrent-tracker/issues"
+    "url": "https://github.com/reklatsmasters/bittorrent-tracker/issues"
   },
   "dependencies": {
     "bencode": "^0.7.0",
@@ -59,7 +50,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/feross/bittorrent-tracker.git"
+    "url": "git://github.com/reklatsmasters/bittorrent-tracker.git"
   },
   "scripts": {
     "test": "standard && tape test/*.js"
